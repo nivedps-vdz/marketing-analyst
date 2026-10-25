@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/*
+ * Vestadz design tokens, matched to crm.vestadz.com/dashboard.
+ * Use these via Tailwind utilities (bg-brand, text-ink, border-line, ...). Do not hard-code colours.
+ */
+@theme {
+  --color-brand: #ae0079;
+  --color-brand-hover: #95006a;
+  --color-brand-soft: #fce8f4;     /* selected navigation background */
+  --color-brand-tint: #fdf2f8;     /* sidebar profile card */
+
+  --color-ink: #26354d;            /* primary text */
+  --color-muted: #7b879b;          /* secondary text, muted blue-grey */
+  --color-subtle: #a3adbd;         /* section labels, placeholders */
+  --color-page: #f4f6fa;           /* page background */
+  --color-card: #ffffff;
+  --color-line: #e8ebf1;           /* borders */
+  --color-line-strong: #d7dce5;
+
+  --color-positive: #16a34a;
+  --color-positive-soft: #e6f7ee;
+  --color-negative: #dc2626;
+  --color-negative-soft: #fdecec;
+  --color-neutral-soft: #eef1f5;
+  --color-warning: #b45309;
+  --color-warning-soft: #fef3e2;
+
+  --color-chart-1: #ae0079;
+  --color-chart-2: #26354d;
+  --color-chart-3: #0e9f8e;
+  --color-chart-4: #f59e0b;
+  --color-chart-5: #8b95a7;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.04);
+}
+
+html,
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Brand logo rendered from the white-on-transparent PNG as a magenta mask, so the supplied asset is
+   reproduced exactly without recolouring the file. */
+.brand-mask {
+  background-color: var(--color-brand);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: var(--color-muted);
+  font-size: 11px;
+}
